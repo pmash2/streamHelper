@@ -15,4 +15,9 @@ case ${1} in
 		;;
 esac
 
+if [ ! -f "${codeFile}" ]; then
+  echo "[ERROR] Code file ${codeFile} does not exist!"
+  exit 1
+fi
+
 "C:\Program Files (x86)\Notepad++\notepad++.exe" -qf${codeFile} -qSpeed2 -l${lang} -multiInst -nosession -notabbar
